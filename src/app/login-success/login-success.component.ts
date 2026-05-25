@@ -8,13 +8,15 @@ import { jwtDecode } from 'jwt-decode';
 })
 export class LoginSuccessComponent implements OnInit {
 
-  token: string | null = '';
+  token: string | null = null;
   user: any = null;
+  orgName: string | null = null;
 
   ngOnInit(): void {
 
     const params = new URLSearchParams(window.location.search);
     this.token = params.get('token');
+    this.orgName = params.get('org');
 
     if (this.token) {
 
@@ -22,10 +24,18 @@ export class LoginSuccessComponent implements OnInit {
 
       try {
         this.user = jwtDecode(this.token);
-        console.log('Decoded User:', this.user);
       } catch (e) {
         console.error('Invalid token');
       }
     }
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    window.location.href = '/login';
+  }
+
+  isLoggedIn() {
+    return !!this.user;
   }
 }

@@ -1,11 +1,43 @@
-<div style="padding:40px">
-  <h2>Login Successful</h2>
+<div style="padding:40px; font-family: Arial;">
 
-  <p>JWT Token stored in localStorage</p>
+  <h2>Login Successful 🎉</h2>
 
-  <div *ngIf="user">
-    <h3>User Info</h3>
+  <div *ngIf="orgName" style="
+    margin-bottom:20px;
+    padding:10px;
+    background:#e8f4f8;
+    border-left:4px solid #007bff;
+    border-radius:5px;
+  ">
+    <strong>Organization:</strong> {{ orgName }}
+  </div>
+
+  <div *ngIf="user" style="
+    margin-top:20px;
+    padding:20px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    width:300px;
+  ">
+
+    <h3>User Profile</h3>
+
     <p><b>Email:</b> {{ user.email }}</p>
 
+    <p><b>Expires:</b> {{ user.exp * 1000 | date:'medium' }}</p>
+
   </div>
+
+  <br>
+
+  <button (click)="logout()" style="
+    background:red;
+    color:white;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+  ">
+    Logout
+  </button>
+
 </div>
