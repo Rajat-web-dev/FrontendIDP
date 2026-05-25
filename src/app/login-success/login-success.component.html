@@ -1,0 +1,11 @@
+<div style="padding:40px">
+  <h2>Login Successful</h2>
+
+  <p>JWT Token stored in localStorage</p>
+
+  <div *ngIf="user">
+    <h3>User Info</h3>
+    <p><b>Email:</b> {{ user.email }}</p>
+
+  </div>
+</div>
