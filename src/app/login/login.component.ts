@@ -78,7 +78,7 @@ export class LoginComponent implements OnDestroy {
     { email: 'mike@techcorp.com', provider: 'Google', org: 'TechCorp', icon: '💡' },
     { email: 'emily@slackware.com', provider: 'Slack', org: 'Slackware', icon: '💬' },
     { email: 'david@zoho.com', provider: 'Zoho', org: 'Zoho Solutions', icon: '📊' },
-    { email: 'alice@gmail.com', provider: 'Google', org: 'Gmail Users', icon: '📧' },
+    { email: 'rajatshelby@gmail.com', provider: 'Google', org: 'Gmail Users', icon: '📧' },
     { email: 'bob@outlook.com', provider: 'Microsoft', org: 'Outlook Users', icon: '📨' }
   ];
 
